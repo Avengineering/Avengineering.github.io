@@ -1,0 +1,10 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <g>
+  <title>Layer 1</title>
+  <rect transform="rotate(45 16 16)" id="svg_4" height="32" width="5" y="0" x="13.5" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#ffffff" fill="#ffffff"/>
+  <rect id="svg_6" transform="rotate(-45 16 16)" height="32" width="5" y="0" x="13.5" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#ffffff" fill="#ffffff"/>
+  <rect transform="rotate(45 16 16)" stroke="#000000" id="svg_1" height="30" width="3" y="1" x="14.5" stroke-width="0" fill="#000000"/>
+  <rect transform="rotate(-45 16 16)" id="svg_3" stroke="#000000" height="30" width="3" y="1" x="14.5" stroke-width="0" fill="#000000"/>
+ </g>
+</svg>

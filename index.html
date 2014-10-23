@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="/gear.ico" type="image/x-icon"/>
+  <link rel="icon" href="/gear.ico" type="image/x-icon"/>
+  <title>Avengineering!</title>
+  <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1">
+  <!--<script src="jquery-1.10.1.min.js"></script>-->
+  <!--IE shenanigans (if there are any)-->
+  <!--[if IE]>
+    <script type="text/javascript" >alert("Internet Explorer 9 and below are not supported!");</script>
+    <style type="text/css">
+
+      #vignette {
+        filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='frame.png', sizingMethod='scale');
+        background:none !important;
+        box-shadow:none !important;
+      }
+
+    </style>
+  <![endif]-->
+  <script type="text/javascript" src="numeric-1.2.6.min.js"></script>
+  <script type="text/javascript" src="browserdetect.js" defer></script>
+  <script type="text/javascript" src="displacement.js" defer></script>
+  <script type="text/javascript" src="avengineering.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="displacement.css">
+  <link rel="stylesheet" type="text/css" href="avengineering.css">
+  <!--<link rel="stylesheet" type="text/css" href="controls.css">-->
+</head>
+<body data-displacement="focus:2000,2000; limit:-2500,-1000,2000,1250;" style="background:white;">
+<svg id="snapCursor" style="visibility:hidden">
+</svg>
+<svg id="snapSelect" style="visibility:hidden">
+</svg>
+<svg id="vignette">
+</svg>
+<div class="nav bar" id="homenav" style="top:50px; left:-5px; height:40px; max-height:100%;">
+  <svg class="navshadow"></svg>
+  <div style="color:rgb(100,200,255); text-decoration:underline; font-size:16px; margin-left:-7px; margin-top:-5px; margin-bottom:5px; text-shadow:0 0 5px black;">Avengineering</div>
+  <a href="#home">Home</a>
+</div>
+<div class="nav bar" id="mainnav" style="top:120px; left:-5px; max-height:100%;">
+  <svg class="navshadow"></svg>
+  <a href="#activities"><div class="navlink">What we do</div></a>
+  <a href="#projects"><div class="navlink">Projects</div></a>
+  <a href="#about"><div class="navlink">What we are</div></a>
+  <a href="#people"><div class="navlink">Officers</div></a>
+  <a href="#participate"><div class="navlink">Get involved</div></a>
+  <a style="display:block;" href="https://www.facebook.com/groups/421481221281986/" target="_blank"><div class="sociallink"><img class="socialicon" src="FB-f-Logo__blue_29.png" /><div class="sociallinktext">Join our group on Facebook</div></div></a>
+</div>
+<noscript><div style="color:red; font-size:48px;">Remember to enable Javascript on this website.</div></noscript>
+<!--<div class="nav" style="bottom:-50px; left:100px; height:200px; width:200px;">
+  <svg class="navshadow"></svg>
+  stuff<br>stuff<br>stuff<br>stuff<br>stuff<br>stuff<br>stuff<br>stuff<br>stuff<br>stuff<br>stuff
+</div>-->
+<div class="center" style="top:2000px; left:2000px; text-shadow:0 0 10px black;" id="home" data-displacement="parallax:0.9; snap:snap;">
+  <div class="box org" style="left:-180px; top:-40px; width:360px; height:100px; z-index:-1; overflow:hidden;">
+    <div class="content" style="top:75px; text-shadow:0 0 20px black; margin:0; white-space:nowrap;" data-displacement="parallax:0.25; parallaxOrigin:parent,0,-15;">&nbsp;scroll, click a title, or drag the webpage to navigate</div>
+  </div>
+  <h1 style="font-size:48px; left:-165px; top:-50px; z-index:1;">Avengineering</h1>
+  <div id="gear" style="left:-240px; top:-240px; width:480px; height:480px; z-index:-2; opacity:1;" data-displacement="doPosition:never;"></div>
+  <div class="box transp xlrg" style="left:-250px; top:-250px; border-radius:250px; border:none;"></div>
+</div>
+<div class="gear" style="left:1808px; top:1808px; width:384px; height:384px; z-index:-3; opacity:0.8;" data-displacement="parallax:0.8;"></div>
+<div class="gear" style="left:1846.4px; top:1846.4px; width:307.2px; height:307.2px; z-index:-4; opacity:0.64;" data-displacement="parallax:0.64;"></div>
+<div class="gear" style="left:1877.12px; top:1877.12px; width:245.76px; height:245.76px; z-index:-5; opacity:0.512;" data-displacement="parallax:0.512;"></div>
+<div class="gear" style="left:1901.696px; top:1901.696px; width:196.608px; height:196.608px; z-index:-6; opacity:0.4096;" data-displacement="parallax:0.4096;"></div>
+<div class="gear" style="left:1921.3568px; top:1921.3568px; width:157.2864px; height:157.2864px; z-index:-7; opacity:0.32768;" data-displacement="parallax:0.32768;"></div>
+<div class="gear" style="left:1937.08544px; top:1937.08544px; width:125.82912px; height:125.82912px; z-index:-8; opacity:0.262144;" data-displacement="parallax:0.262144;"></div>
+<div class="gear" style="left:1940px; top:1940px; width:120px; height:120px; z-index:-9; opacity:0.25;" data-displacement="parallax:0.25;"></div>
+<div class="box rect scroll" id="participate" style="top:2250px; left:1800px; height:850px; z-index:9" data-displacement="parallax:1; focus:0,-200; snap:snap;">
+  <h2 class="section"><a href="#participate">join us, get involved</a></h2>
+  <div class="caption" data-displacement="parallax:basis(2,0,0,1.1); parallaxOrigin:parent;">Welcome to the jungle,<br />
+  We've got fun n' games</div>
+  <div class="hidden nav scroll" style="width:40px; top:10px; left:-50px; bottom:50px;" data-displacement="parallax:0.95;">
+    <div class="subnav vert scroll" style="top:50px;" data-displacement="parallax:basis(1,0,0,0.15)">
+      <span class="subntitle nback"><a href="#participate">Join us, get involved</a></span> | 
+      <a href="#events">Events</a> | 
+      <a href="#meeting">Meeting times</a>
+      <br />
+      <span class="subntitle"><a href="#home">HOME</a></span> | 
+      <span class="subntitle"><a href="#activities">What we do</a></span> | 
+      <span class="subntitle"><a href="#projects">Projects</a></span> |
+      <span class="subntitle"><a href="#about">What we are</a></span> | 
+      <span class="subntitle"><a href="#people">Officers</a></span>
+    </div>
+  </div>
+  <div class="content" style="z-index:-5;">
+    <p>Join the Avengineering community to innovate, teach, learn, and make. Contact us at contact.avengineering@gmail.com</p>
+  </div>
+  <div class="box sub sr10 transl scroll" id="events" style="top:275px; z-index:-1;" data-displacement="parallax:basis(1,0,0,2); snap:snap;">
+    <h3><a href="#events">Events</a></h3>
+    <div class="content" style="margin-top:0; margin-bottom:0; color:red;">This place is still under construction!</div>
+    <div><iframe src="https://www.google.com/calendar/embed?mode=AGENDA&amp;height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%232F6309&amp;ctz=America%2FLos_Angeles" style=" border-width:0 " width="350" height="400" frameborder="0" scrolling="no"></iframe></div>
+  </div>
+  <div class="box sub transl scroll" id="meeting" style="top:800px; z-index:-1; width:350px; height:200px;" data-displacement="parallax:basis(1,0,0,2); snap:snap;">
+    <h3><a href="#meeting">Meeting times</a></h3>
+    <div class="content">
+      <p>Meetings are on Thursdays at 7:30. For meeting places, contact us.</p>
+    </div>
+  </div>
+</div>
+<div class="box rect scroll" id="activities" style="top:1600px; left:1150px; z-index:10; -webkit-transform:rotate(90deg); transform:rotate(90deg); -ms-transform:rotate(90deg);" data-displacement="parallax:1; focus:0,-200; snap:snap;">
+  <h2 class="section"><a href="#activities">what we do</a></h2>
+  <div class="caption" data-displacement="parallax:basis(1.1,0.2,0.2,0.9); parallaxOrigin:parent,0,-200;">We build.</div>
+  <div class="hidden nav scroll" style="width:40px; top:10px; left:-50px; bottom:50px;" data-displacement="parallax:0.95;">
+    <div class="subnav vert scroll" style="top:50px;" data-displacement="parallax:basis(1,0,0,0.15)">
+      <span class="subntitle nback"><a href="#activities">What we do</a></span>
+      <br />
+      <span class="subntitle"><a href="#home">HOME</a></span> | 
+      <span class="subntitle"><a href="#projects">Projects</a></span> |
+      <span class="subntitle"><a href="#participate">Get involved</a></span> | 
+      <span class="subntitle"><a href="#about">What we are</a></span> | 
+      <span class="subntitle"><a href="#people">Officers</a></span>
+    </div>
+  </div>
+  <div class="content">
+    <p>Avengineering revolves around projects.  Our members play an active role in the direction
+    of the club and we welcome your input and collaboration.  Team leaders will be appointed
+    for every competition or project based on experience, availability, and interest.  If you
+    have an idea for a competition or a project that you’d like us to collaborate on, get our
+    attention. If you have an idea for a cool hands-on demonstration, we’ll give you the
+    floor. You got into UCLA because someone saw the potential in you to do great things, why not start now?</p>
+    <p>In addition to projects, we are forming a partnership with The Exploratory in Culver
+    City. In exchange for contributing to their program, by either helping them teach kids,
+    by filling out their manpower and helping around the shop, they have offered to open up
+    their space to us for free when they aren’t hosting scheduled lessons, if we can make
+    their workshop a focal point for tinkering in LA.</p>
+    <p>As part of our partnership with The Exploratory, we will have the opportunity
+    to volunteer and have access to the resources at the maker space:</p>
+    <ul>
+      <li>MakerBot 3D printer</li>
+      <li>Computer lab</li>
+      <li>Wookworking shop</li>
+      <li>Arduino boards</li>
+      <li>Lego Robotics</li>
+      <li>Sewing station</li>
+      <li>And drawers full of spare electronic parts</li>
+    </ul>
+  </div>
+</div>
+<div class="box lrg scroll" id="projects" style="top:1800px; left:500px; z-index:10; -webkit-transform:rotate(90deg); transform:rotate(90deg); -ms-transform:rotate(90deg);" data-displacement="parallax:1; focus:0,0; snap:snap;">
+  <h2 class="section" style="z-index:10;"><a href="#projects">projects / demos</a></h2>
+  <div class="caption" style="position:relative; top:-100px; left:200px; transform:rotate(30deg); -webkit-transform:rotate(30deg); -ms-transform:rotate(30deg);" data-displacement="parallax:basis(1.5,0,0,2); parallaxOrigin:parent"><a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/ForScience" target="_blank" style="color:gold;">For Science!</a></div>
+  <div class="content" style="top:-70px;">
+    <p>Choose a project from the left plane.</p>
+    <p>We're new! In the future, this place will be populated by all the cool stuff we will have done.</p>
+  </div>
+  <div class="hidden nav scroll" id="projectcontainer" style="width:1200px; height:1100px; top:50px; left:-200px; color:black; z-index:-1;" data-displacement="parallax:0.95;">
+    <div class="hidden nav scroll" style="width:100px; height:450px; top:200px; left:0; background:gold" data-displacement="parallax:basis(0.1,0,0,0.5); parallaxOrigin:this,300,100">
+      <ul style="margin:0">
+        <li><div class="subntitle nback"><a class="block" href="#projects">Projects</a></div></li>
+        <li><div class="subntitle"><a class="block" href="#home">HOME</a></div></li>
+        <li><div class="subntitle"><a class="block" href="#activities">What we do</a></div></li>
+        <li><div class="subntitle"><a class="block" href="#participate">Get Involved</a></div></li>
+        <li><div class="subntitle"><a class="block" href="#about">What we are</a></div></li>
+        <li><div class="subntitle"><a class="block" href="#people">Officers</a></div></li>
+        <li><a class="block" href="#proj1">-TBP Rube Goldberg</a></li>
+        <li><a class="block" href="#proj2">-TBP Cardboard Boat Race</a></li>
+        <li><a class="block" href="#proj3">-3D Printing</a></li>
+        <li><a class="block" href="#proj6">-Cipher Building</a></li>
+        <li><a class="block" href="#proj10">-Magnetic Core Memory</a></li>
+        <li><a class="block" href="#proj11">-Face Scanning</a></li>
+        <li><a class="block" href="#proj4">-Cardboard Arcade</a></li>
+        <li><a class="block" href="#proj5">-Quadcopter / Zeppelin</a></li>
+        <li><a class="block" href="#proj7">-Kite Cameras</a></li>
+        <li><a class="block" href="#proj8">-Motorization</a></li>
+        <li><a class="block" href="#proj9">-Projectile Launching</a></li>
+      </ul>
+    </div>
+    <div class="listcont scroll" style="top:0; left:0; width:2780px; height:1670px;" data-displacement="parallax:4; parallaxOrigin:parent,-200,-270;">
+      <div class="box xlrg org listelem" id="proj1" data-displacement="snap:snap">
+        <h3 class="blackonlight"><a href="#proj1">TBP Rube Goldberg</a><br />(Pre-Founding)</h3>
+        <div class="floatimg" style="z-index:-1; width:400px; height:267px; top:200px; left:50px;" data-displacement="parallax:1.5;"><img src="rubegoldberg1.jpg" style="position:absolute;" width="400"/></div>
+        <div class="content" style="z-index:1;">
+          <p class="blackonlight">In Winter Quarter 2013, Avengineering participated in TBP's Rube Goldberg machine.  This event resulted in the formation of the name "Avengineering."</p>
+        </div>
+      </div>
+      <div class="box xlrg org listelem" id="proj2" data-displacement="snap:snap">
+        <h3 class="blackonlight"><a href="#proj2">TBP Cardboard Boat Race</a><br />(Pre-Founding)</h3>
+        <div class="floatimg" style="z-index:-1; width:400px; height:267px; top:200px; left:50px;" data-displacement="parallax:1.5;"><img src="cardboardboat1.jpg" style="position:absolute;" width="400"/></div>
+        <div class="content">
+          <p class="blackonlight">In Spring Quarter 2013, Avengineering placed 2nd in TBP's Cardboard Boat race.  Our boat did not sink until we loaded 3 people into it after multiple circuits around the pool.</p>
+          <span class="whiteontblack" style="font-size:10px;">Image taken by Tau Beta Pi</span>
+        </div>
+      </div>
+      <div class="box xlrg org listelem" id="proj3" data-displacement="snap:snap">
+        <h3><a href="#proj3">3D Printing</a></h3>
+        <div class="content">
+        </div>
+      </div>
+      <br />
+      <div class="box xlrg org listelem" id="proj6" data-displacement="snap:snap;">
+        <h3><a href="#proj6">Cipher Building</a></h3>
+        <div class="content">
+        </div>
+      </div>
+      <div class="box xlrg org listelem" id="proj10" data-displacement="snap:snap;">
+        <h3><a href="#proj10">Magnetic Core Memory</a></h3>
+        <div class="content">
+        </div>
+      </div>
+      <div class="box xlrg org listelem" id="proj11" data-displacement="snap:snap;">
+        <h3><a href="#proj11">Face Scanning</a></h3>
+        <div class="content">
+        </div>
+      </div>
+      <br />
+      <div class="box xlrg org listelem" id="proj4" data-displacement="snap:snap">
+        <h3><a href="#proj4">Cardboard Arcade</a><br />(Under Consideration)</h3>
+        <div class="content">
+        </div>
+      </div>
+      <div class="box xlrg org listelem" id="proj5" data-displacement="snap:snap">
+        <h3><a href="#proj5">Quadcopter / Zeppelin</a><br />(Under Consideration)</h3>
+        <div class="content">
+        </div>
+      </div>
+      <div class="box xlrg org listelem" id="proj7" data-displacement="snap:snap;">
+        <h3><a href="#proj7">Kite Cameras</a><br />(Under Consideration)</h3>
+        <div class="content">
+        </div>
+      </div>
+      <br />
+      <div class="box xlrg org listelem" id="proj8" data-displacement="snap:snap;">
+        <h3><a href="#proj8">Motorization</a><br />(Under Consideration)</h3>
+        <div class="content">
+        </div>
+      </div>
+      <div class="box xlrg org listelem" id="proj9" data-displacement="snap:snap;">
+        <h3><a href="#proj9">Projectile Launching</a></h3>
+        <div class="content">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="box rect scroll" id="about" style="top:1600px; left:2450px; z-index:8; -webkit-transform:rotate(-90deg); transform:rotate(-90deg); -ms-transform:rotate(-90deg);" data-displacement="parallax:1; focus:0,-200; snap:snap;">
+  <h2 class="section"><a href="#about">what we are</a></h2>
+  <div class="caption" data-displacement="parallax:1.3; parallaxOrigin:parent,0,-125;">About our community</div>
+  <div class="hidden nav scroll" style="width:40px; top:10px; left:-50px; bottom:50px;" data-displacement="parallax:0.95;">
+    <div class="subnav vert scroll" style="top:50px;" data-displacement="parallax:basis(1,0,0,0.15)">
+      <span class="subntitle nback"><a href="#about">What we are</a></span>
+      <br />
+      <span class="subntitle"><a href="#home">HOME</a></span> | 
+      <span class="subntitle"><a href="#people">Officers</a></span> | 
+      <span class="subntitle"><a href="#participate">Get involved</a></span> | 
+      <span class="subntitle"><a href="#activities">What we do</a></span> | 
+      <span class="subntitle"><a href="#projects">Projects</a></span>
+    </div>
+  </div>
+  <div class="content">
+    <p>Avengineering is a new maker club dedicated to tinkering, giving students a jumping off
+    point to learn new skills, and collaborating on a series of large-scale projects.</p>
+    <p>We are for the tinkerers who have fun building.  Avengineering is for anyone with a
+    drive to make something awesome&mdash;anyone handy with a toolbox, a paintbrush, or an idea.
+    We want to expand beyond the theories taught in lecture and bridge the gap between
+    the Sciences and the Arts to keep the passion for learning alive.</p>
+</div>
+</div>
+<div class="box transp xlrg scroll" id="people" style="top:1200px; left:2400px; z-index:8;" data-displacement="parallax:1; snap:snap;">
+  <h2 class="section vert"><a href="#people">officers</a></h2>
+  <div class="caption vert" data-displacement="parallax:0.7; parallaxOrigin:parent,200,200;">We think; therefore we are</div>
+  <div class="content blackonlight" style="margin-top:-120px; margin-left:50px;">
+    <p>Choose a position from the panel below.</p>
+  </div>
+  <div class="hidden nav nvert scroll" style="width:75px; height:1400px; top:150px; left:100px;" data-displacement="parallax:0.95; parallaxOrigin:parent">
+    <div class="subnav scroll" style="top:15px; white-space:normal; font-size:15px; width:115px; padding-bottom:50px;" data-displacement="parallax:basis(1,0,0,0.25); parallaxOrigin:parent,0,100;">
+      <ul style="margin:0;">
+        <li><div class="diag pplnav" style="font-size:medium"><div class="subntitle nback"><a class="block" href="#people">Officers</a></div></div></li>
+        <li><div class="diag pplnav" style="font-size:medium"><div class="subntitle"><a class="block" href="#home">HOME</a></div></div></li>
+        <li><div class="diag pplnav" style="font-size:medium"><div class="subntitle"><a class="block" href="#about">What we are</a></div></div></li>
+        <li><div class="diag pplnav" style="font-size:medium"><div class="subntitle"><a class="block" href="#participate">Get involved</a></div></div></li>
+        <li><div class="diag pplnav" style="font-size:medium"><div class="subntitle"><a class="block" href="#activities">What we do</a></div></div></li>
+        <li><div class="diag pplnav" style="font-size:medium"><div class="subntitle"><a class="block" href="#projects">Projects</a></div></div></li>
+        <li><div class="diag pplnav"><a class="block" href="#person1">President</a></div></li>
+        <li><div class="diag pplnav"><a class="block" href="#person2">IVP/Secretary</a></div></li>
+        <li><div class="diag pplnav"><a class="block" href="#person3">EVP</a></div></li>
+        <li><div class="diag pplnav"><a class="block" href="#person4">VC/EXP</a></div></li>
+        <li><div class="diag pplnav"><a class="block" href="#person5">Treasurer</a></div></li>
+        <li><div class="diag pplnav"><a class="block" href="#person6">Webmaster</a></div></li>
+        <li><div class="diag pplnav"><a class="block" href="#person7">Social Chair</a></div></li>
+        <li><div class="diag pplnav"><a class="block" href="#person8">C.S.B.</a></div></li>
+      </ul>
+    </div>
+  </div>
+  <div class="nav scroll" id="personcontainer" style="height:350px; width:1500px; top:150px; left:100px; z-index:110; color:black; overflow:visible;">
+    <div class="listcont scroll" style="top:0; left:0; width:4500px; height:350px;" data-displacement="parallax:basis(4,0,0,1); parallaxOrigin:parent,-550,0;">
+      <div class="box sr9 transl listelem profile" id="person1" style="z-index:10;" data-displacement="snap:snap;">
+        <h3 class="profiletitle"><a href="#person1">President</a></a></h3>
+        <div class="profileimg"><img src="compass-gear.png" /></div>
+        <div class="content">
+          In charge of logistics and making things happen. Handles administrative duties.
+        </div>
+      </div>
+      <div class="box sr9 transl listelem profile" id="person2" style="z-index:10;" data-displacement="snap:snap;">
+        <h3 class="profiletitle"><a href="#person2">Internal Vice President / Secretary</a></h3>
+        <div class="profileimg"><img src="compass-gear.png" /></div>
+        <div class="content">
+          In charge of managing the clubs internal workings and communications. Organizes meetings.
+        </div>
+      </div>
+      <div class="box sr9 transl listelem profile" id="person3" style="z-index:10;" data-displacement="snap:snap;">
+        <h3 class="profiletitle"><a href="#person3">External Vice President</a></h3>
+        <div class="profileimg"><img src="compass-gear.png" /></div>
+        <div class="content">
+          Liaisons with external organizations, industries, and clubs.
+        </div>
+      </div>
+      <div class="box sr9 transl listelem profile" id="person4" style="z-index:10;" data-displacement="snap:snap;">
+        <h3 class="profiletitle"><a href="#person4">Volunteer Coordinator / Exploratory Liaison</a></h3>
+        <div class="profileimg"><img src="compass-gear.png" /></div>
+        <div class="content">
+          Coordinates volunteering opportunities and works directly with the Exploratory.
+        </div>
+      </div>
+      <div class="box sr9 transl listelem profile" id="person5" style="z-index:10;" data-displacement="snap:snap;">
+        <h3 class="profiletitle"><a href="#person5">Treasurer</a></h3>
+        <div class="profileimg"><img src="compass-gear.png" /></div>
+        <div class="content">
+          Handles the money, applies for grants, keeps the club budget.
+        </div>
+      </div>
+      <div class="box sr9 transl listelem profile" id="person6" style="z-index:10;" data-displacement="snap:snap;">
+        <h3 class="profiletitle"><a href="#person6">Webmaster</a></h3>
+        <div class="profileimg"><img src="compass-gear.png" /></div>
+        <div class="content">
+          Maintains and updates the Avengineering Website.
+        </div>
+      </div>
+      <div class="box sr9 transl listelem profile" id="person7" style="z-index:10;" data-displacement="snap:snap;">
+        <h3 class="profiletitle"><a href="#person7">Social Chair</a></h3>
+        <div class="profileimg"><img src="compass-gear.png" /></div>
+        <div class="content">
+          Manages the facebook account and arranges/hosts social events. Takes photographs.
+        </div>
+      </div>
+      <div class="box sr9 transl listelem profile" id="person8" style="z-index:10;" data-displacement="snap:snap;">
+        <h3 class="profiletitle"><a href="#person8">Common Sense Board</a></h3>
+        <div class="profileimg"><img src="compass-gear.png" /></div>
+        <div class="content">
+          All officers and founders sit on the Common Sense Board to make sure that all projects and activities follow safety, noise, and appropriateness guidelines.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="mapshadow qlrg scroll" style="top:1950px; left:1950px; border-radius:50px; z-index:-1; transform:rotate(-90deg); -webkit-transform:rotate(-90deg); -ms-transform:rotate(-90deg);" data-displacement="parallax:0.25;">
+    <div class="maptitle">
+      Home
+    </div>
+  </div>
+  <div class="mapshadow qrect scroll" style="top:2062.5px; left:1950px;" data-displacement="parallax:0.25;">
+    <div class="maptitle">
+      Get involved
+    </div>
+  </div>
+  <div class="mapshadow qrect scroll" style="top:1900px; left:1787.5px; transform:rotate(90deg); -webkit-transform:rotate(90deg); -ms-transform:rotate(90deg);" data-displacement="parallax:0.25;">
+    <div class="maptitle">
+      What we do
+    </div>
+  </div>
+  <div class="mapshadow qsrect scroll" style="top:1950px; left:1625px;" data-displacement="parallax:0.25;">
+    <div class="maptitle">
+      Projects
+    </div>
+  </div>
+  <div class="mapshadow qrect scroll" style="top:1900px; left:2112.5px; transform:rotate(-90deg); -webkit-transform:rotate(-90deg); -ms-transform:rotate(-90deg);" data-displacement="parallax:0.25;">
+    <div class="maptitle">
+      What we are
+    </div>
+  </div>
+  <div class="mapshadow qxlrg scroll" style="top:1800px; left:2100px; transform:rotate(-90deg); -webkit-transform:rotate(-90deg); -ms-transform:rotate(-90deg);" data-displacement="parallax:0.25;">
+    <div class="maptitle" style="left:80.5px; margin-top:-4px;">
+      Who we<br /> are
+    </div>
+  </div>
+</body>
+</html>

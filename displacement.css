@@ -1,0 +1,67 @@
+#framed
+{
+  height:100%;
+  width:100%;
+  overflow:scroll;
+}
+.F-absolute
+{
+  position:fixed !important;
+}
+#scrollspanner
+{
+  position:absolute;
+  background:none;
+  padding:0;
+  margin:0;
+  border:none;
+  top:0;
+  left:0;
+  height:0;
+  width:0;
+  z-index:-9001;
+}
+#displacementEvent
+{
+  position:fixed;
+  top:-1;
+  left:-1;
+  width:0;
+  height:0;
+  visibility:hidden;
+}
+body::-webkit-scrollbar
+{
+  width:0px;
+  height:0px;
+  display:none;
+}
+
+.scrolltester
+{
+  padding:0;
+  margin:0;
+  border:none !important;
+  position:fixed;
+  top:-200px;
+  left:-200px;
+  visibility:hidden;
+  width:200px;
+  height:200px;
+  overflow:scroll;
+  z-index:-9001;
+}
+.scrolltester::-webkit-scrollbar
+{
+  width:0px;
+  height:0px;
+  display:none;
+}
+.scrolltester::-webkit-scrollbar-track
+{
+  background:black;
+}
+.scrolltester::-webkit-scrollbar-corner
+{
+  background:black;
+}
