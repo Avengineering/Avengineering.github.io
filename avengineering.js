@@ -74,21 +74,22 @@
       snapSelect.style.visibility="visible";
     }
     if (document.readyState=="complete"){
-      page.initialize([[1,0,0],[0,1,0],[0,0,1]]);
-      nav.initialize();
-      nav.homeHash="home";
-      nav.doAnimate=800;
-      nav.doScroll=true;
-      //nav.doParallaxScroll=true;
-      nav.doParallaxDrag=true;
-      nav.doDrag=true;
-      nav.doSnap=true;
-      nav.animateTiming="power-inout,5";
+      Displacement.transformInitialize([[1,0,0],[0,1,0],[0,0,1]]);
+      Displacement.navigateInitialize();
+      Displacement.setHomeHash("home");
+      Displacement.setAnimateTime(800);
+      Displacement.allowScrolling(true);
+      //Displacement.useParallaxDependentScrolling(true);
+      Displacement.allowDragging(true);
+      Displacement.useParallaxDependentDragging(true);
+      Displacement.useSnapping(true);
+      Displacement.setAnimateTimingFunction("power-inout,5");
       backgr.style.opacity=0;
       gear.style.animation="gearrotator 3s cubic-bezier(.44,.72,.73,1)";
       gear.style.WebkitAnimation="gearrotator 3s cubic-bezier(.44,.72,.73,1)";
       proto_init();
       window.setTimeout(function(){
+        elementList = Displacement.getElementList();
         elementList.removeElement(elementList.fetch(backgr),true);
         document.body.removeChild(backgr);
       },500);
@@ -99,19 +100,19 @@
       window.addEventListener("mousemove",mousemoved,false);
       window.addEventListener("mousedown",mouseButtonDown,false);
       window.addEventListener("mouseup",mouseButtonUp,false);
-      document.getElementById("displacementEvent").addEventListener("mouseover",snapIndicator,false);
+      document.getElementById("Displacement-Event").addEventListener("mouseover",snapIndicator,false);
     }else if (window.attachEvent){
       window.attachEvent("mousemove",mousemoved);
       window.attachEvent("mousedown",mouseButtonDown);
       window.attachEvent("mouseup",mouseButtonUp);
-      document.getElementById("displacementEvent").attachEvent("mouseover",snapIndicator);
+      document.getElementById("Displacement-Event").attachEvent("mouseover",snapIndicator);
     }
   }
   var lastMouseOver=document.body,lastSnap=document.body,snapSelectTime=false,snapCursorTime=false;
   var heldOn=document.body;
   function snapIndicator(event){
-    var halfWindowSize=lal.div(page.windowSize,2);
-    var elementObj=nav.getSnapTo(halfWindowSize)[0];
+    var halfWindowSize=lal.div([window.innerHeight,window.innerWidth],2);
+    var elementObj=Displacement.getSnapTo(halfWindowSize)[0];
     if (snapCursorTime!=false) window.clearTimeout(snapCursorTime);
     if (elementObj){
       if (snapSelectTime!=false) window.clearTimeout(snapSelectTime);
@@ -151,6 +152,6 @@
   }
   function mouseButtonUp(event){
     if (!heldOn) return;
-    remClass(heldOn,"selected");
+    heldOn.className=heldOn.className.replace(new RegExp("(?:^|\\s)"+"selected"+"(?!\\S)","g"),"");
   }
 })();
