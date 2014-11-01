@@ -112,9 +112,10 @@
   var heldOn=document.body;
   function snapIndicator(event){
     var halfWindowSize=lal.div([window.innerHeight,window.innerWidth],2);
-    var elementObj=Displacement.getSnapTo(halfWindowSize)[0];
+    var pair=Displacement.getSnapTo(halfWindowSize);
+    var elementObj=pair[0];
     if (snapCursorTime!=false) window.clearTimeout(snapCursorTime);
-    if (elementObj){
+    if (elementObj&&(pair[1]==false)){
       if (snapSelectTime!=false) window.clearTimeout(snapSelectTime);
       var element=elementObj.element;
       if (element!=lastSnap){

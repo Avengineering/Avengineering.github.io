@@ -178,7 +178,7 @@ var Displacement=new function(){
     //a event to be fired when the webpage moves; implementation is disabled
     var translateEvent;
     
-    //list of the custom data attribute (-data-displacement) properties that can be specified on the html elements
+    //list of the custom data attribute (data-Displacement) properties that can be specified on the html elements
     var dataProperties=["doPosition","focus","limit","parallax","parallaxOrigin"];
     
     //the size of the window containing the webpage
@@ -541,7 +541,7 @@ var Displacement=new function(){
         elementObj=elementList.newElement(element);
         elementList.appendElement(elementObj,parentElementObj);
       }
-      var data=parseData(splitData(element.getAttribute("data-displacement")));
+      var data=parseData(splitData(element.getAttribute("data-Displacement")));
       elementObj.data=data;
       if (element==document.body){
         if (element.getAttribute("id")!="Displacement-framed"){
@@ -804,7 +804,7 @@ var Displacement=new function(){
         if (element.thisID)
           elementID=element.thisID;
         else if (element.getAttribute)
-          elementID=element.getAttribute("data-elementID");
+          elementID=element.getAttribute("data-Displacement-elementID");
       }
       if (elementID){
         return list[elementID];
@@ -885,7 +885,7 @@ var Displacement=new function(){
         lastChildID++;
         var newID=parentID+"-"+lastChildID;
         elementObj.thisID=newID;
-        elementObj.element.setAttribute("data-elementID",newID);
+        elementObj.element.setAttribute("data-Displacement-elementID",newID);
         list[newID]=elementObj;
         return newID;
       }else{
@@ -895,7 +895,7 @@ var Displacement=new function(){
         parentObj.lastChildID++;
         var newID=parentID+"-"+parentObj.lastChildID;
         elementObj.thisID=newID;
-        elementObj.element.setAttribute("data-elementID",newID);
+        elementObj.element.setAttribute("data-Displacement-elementID",newID);
         list[newID]=elementObj;
         return newID;
       }
@@ -953,7 +953,7 @@ var Displacement=new function(){
       
       scrollTester=document.createElement("div");
       scrollTester.className="Displacement-scrolltester";
-      scrollTester.setAttribute("data-displacement","doPosition:never;");
+      scrollTester.setAttribute("data-Displacement","doPosition:never;");
       
       scrollSpanner=document.createElement("div");
       scrollSpanner.setAttribute("id","Displacement-scrollspanner");
@@ -1186,21 +1186,26 @@ var Displacement=new function(){
     }*/
     
     //find the element below the center of the screen
+    //if an element has snapping disabled, it recursively searches elements under it.
     this.getSnapTo=function(pos,elementObj){
       if (!elementObj) elementObj=elementList.fetch(document.elementFromPoint(pos[1],pos[0]));
       var noSnaps=true;
       if (elementObj){
-        while (noSnaps){
-          if (elementObj.element==document.body) break;
-          if (elementObj.data["snap"]=="snap"){
-            if (elementObj.element.id==currentHash)
-              break;
-            else{
-              noSnaps=false;
-            }
-          }else{
-            elementObj=elementList.getParent(elementObj);
+        if (elementObj.element==document.body) return [elementObj,noSnaps];
+        if (elementObj.data["snap"]=="snap"){
+          if (elementObj.element.id==currentHash)
+            return [elementObj,noSnaps];
+          else{
+            noSnaps=false;
+            return [elementObj,noSnaps];
           }
+        }else if (elementObj.data["snap"]=="parent") {
+          return nav.getSnapTo(pos,elementList.getParent(elementObj));
+        }else{
+          elementObj.element.className+=" Displacement-snap-hidden";
+          var pair = nav.getSnapTo(pos);
+          remClass(elementObj.element,"Displacement-snap-hidden");
+          return pair;
         }
       }
       return [elementObj,noSnaps];
