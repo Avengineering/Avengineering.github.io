@@ -29,9 +29,9 @@
   <!--<link rel="stylesheet" type="text/css" href="controls.css">-->
 </head>
 <body data-Displacement="focus:2000,2000; limit:-2500,-1000,2000,1250;" style="background:white;">
-<svg id="snapCursor" style="visibility:hidden">
+<svg id="snapCursor" style="visibility:hidden;">
 </svg>
-<svg id="snapSelect" style="visibility:hidden">
+<svg id="snapSelect" style="visibility:hidden;">
 </svg>
 <svg id="vignette">
 </svg>
@@ -54,9 +54,9 @@
   <svg class="navshadow"></svg>
   stuff<br>stuff<br>stuff<br>stuff<br>stuff<br>stuff<br>stuff<br>stuff<br>stuff<br>stuff<br>stuff
 </div>-->
-<div class="center" style="top:2000px; left:2000px; text-shadow:0 0 10px black; z-index:10" id="home" data-Displacement="parallax:0.9; snap:snap;">
+<div class="center" style="top:2000px; left:2000px; text-shadow:0 0 10px black; z-index:10;" id="home" data-Displacement="parallax:0.9; snap:snap;">
   <div class="box org" style="left:-180px; top:-40px; width:360px; height:100px; z-index:9; overflow:hidden;">
-    <div class="content" style="top:75px; text-shadow:0 0 20px black; margin:0; white-space:nowrap;" data-Displacement="parallax:0.25; parallaxOrigin:parent,0,-15;">&nbsp;scroll, click a title, or drag the webpage to navigate</div>
+    <div class="content" style="top:75px; left:40px; text-shadow:0 0 20px black; margin:0; white-space:nowrap;" data-Displacement="parallax:0.25; parallaxOrigin:parent,0,0;">&nbsp;scroll, click a title, or drag to navigate</div>
   </div>
   <h1 style="font-size:48px; left:-165px; top:-50px; z-index:11;">Avengineering</h1>
   <div id="gear" style="left:-240px; top:-240px; width:480px; height:480px; z-index:8; opacity:1;" data-Displacement="doPosition:never; snap:parent;"></div>
@@ -144,11 +144,11 @@
   <h2 class="section" style="z-index:20;"><a href="#projects">projects / demos</a></h2>
   <div class="caption" style="position:relative; top:-100px; left:200px; transform:rotate(30deg); -webkit-transform:rotate(30deg); -ms-transform:rotate(30deg);" data-Displacement="parallax:basis(1.5,0,0,2); parallaxOrigin:parent"><a href="http://tvtropes.org/pmwiki/pmwiki.php/Main/ForScience" target="_blank" style="color:gold;">For Science!</a></div>
   <div class="content" style="top:-70px;">
-    <p>Choose a project from the left plane.</p>
-    <p>We're new! In the future, this place will be populated by all the cool stuff we will have done.</p>
+    <p>Choose a project from the left pane.</p>
+    <p>Our current project is the Mechanical Spider.</p>
   </div>
-  <div class="hidden nav scroll" id="projectcontainer" style="width:1200px; height:1100px; top:50px; left:-200px; color:black; z-index:9;" data-Displacement="parallax:0.95;">
-    <div class="hidden nav scroll" style="width:100px; height:450px; top:200px; left:0; background:gold" data-Displacement="parallax:basis(0.1,0,0,0.5); parallaxOrigin:this,300,100">
+  <div class="hidden nav scroll" id="projectcontainer" style="width:1200px; height:1100px; top:80px; left:-200px; color:black; z-index:9;">
+    <div class="hidden nav scroll" style="width:120px; top:200px; left:-10px; background:rgb(255,225,28)" data-Displacement="parallax:basis(0.1,0,0,0.5); parallaxOrigin:this,300,100">
       <ul style="margin:0">
         <li><div class="subntitle nback"><a class="block" href="#projects">Projects</a></div></li>
         <li><div class="subntitle"><a class="block" href="#home">HOME</a></div></li>
@@ -156,81 +156,73 @@
         <li><div class="subntitle"><a class="block" href="#participate">Get Involved</a></div></li>
         <li><div class="subntitle"><a class="block" href="#about">What we are</a></div></li>
         <li><div class="subntitle"><a class="block" href="#people">Officers</a></div></li>
+        <li><a class="block" href="#proj8">-Mechanical Spider</a></li>
+        <li><a class="block" href="#proj3">-3D Printing</a></li>
+        <li><a class="block" href="#proj4">-CAD Workshop</a></li>
+        <li><a class="block" href="#proj6">-Arduino Workshop</a></li>
+        <li><a class="block" href="#proj7">-3D Printed Arduino Robots</a></li>
+        <li><a class="block" href="#proj5">-The Exploratory</a></li>
         <li><a class="block" href="#proj1">-TBP Rube Goldberg</a></li>
         <li><a class="block" href="#proj2">-TBP Cardboard Boat Race</a></li>
-        <li><a class="block" href="#proj3">-3D Printing</a></li>
-        <li><a class="block" href="#proj6">-Cipher Building</a></li>
-        <li><a class="block" href="#proj10">-Magnetic Core Memory</a></li>
-        <li><a class="block" href="#proj11">-Face Scanning</a></li>
-        <li><a class="block" href="#proj4">-Cardboard Arcade</a></li>
-        <li><a class="block" href="#proj5">-Quadcopter / Zeppelin</a></li>
-        <li><a class="block" href="#proj7">-Kite Cameras</a></li>
-        <li><a class="block" href="#proj8">-Motorization</a></li>
-        <li><a class="block" href="#proj9">-Projectile Launching</a></li>
       </ul>
     </div>
     <div class="listcont scroll" style="top:0; left:0; width:2780px; height:1670px;" data-Displacement="parallax:4; parallaxOrigin:parent,-200,-270;">
-      <div class="box xlrg org listelem" id="proj1" data-Displacement="snap:snap">
-        <h3 class="blackonlight"><a href="#proj1">TBP Rube Goldberg</a><br />(Pre-Founding)</h3>
-        <div class="floatimg" style="z-index:9; width:400px; height:267px; top:200px; left:50px;" data-Displacement="parallax:1.5;"><img src="rubegoldberg1.jpg" style="position:absolute;" width="400"/></div>
-        <div class="content" style="z-index:11;">
-          <p class="blackonlight">In Winter Quarter 2013, Avengineering participated in TBP's Rube Goldberg machine.  This event resulted in the formation of the name "Avengineering."</p>
+      <div class="box sr11 org listelem proj" style="background-image:url('compass-gear.png');" id="proj8" data-Displacement="snap:snap">
+        <h3><a href="#proj8">Mechanical Spider</a><br />(Current)</h3>
+        <div class="content blackongold">
+          This is Avengineering's current project for Fall 2014. We plan, at the very least, to construct a 3D printed mechanical spider that utilizes the Klann linkage for its legs.
+          The spider will be controlled by an Arduino, which in turn will provide interactivity through bluetooh.
         </div>
       </div>
-      <div class="box xlrg org listelem" id="proj2" data-Displacement="snap:snap">
-        <h3 class="blackonlight"><a href="#proj2">TBP Cardboard Boat Race</a><br />(Pre-Founding)</h3>
-        <div class="floatimg" style="z-index:9; width:400px; height:267px; top:200px; left:50px;" data-Displacement="parallax:1.5;"><img src="cardboardboat1.jpg" style="position:absolute;" width="400"/></div>
-        <div class="content">
-          <p class="blackonlight">In Spring Quarter 2013, Avengineering placed 2nd in TBP's Cardboard Boat race.  Our boat did not sink until we loaded 3 people into it after multiple circuits around the pool.</p>
-          <span class="whiteontblack" style="font-size:10px;">Image taken by Tau Beta Pi</span>
-        </div>
-      </div>
-      <div class="box xlrg org listelem" id="proj3" data-Displacement="snap:snap">
+      <div class="box sr11 org listelem proj" style="background-image:url('3D-printer.jpg');" id="proj3" data-Displacement="snap:snap">
         <h3><a href="#proj3">3D Printing</a></h3>
-        <div class="content">
+        <div class="content blackongold">
+          One of us personally owns a 3D printer, which plays a large part on our projects.
+          We also sometimes have collaborations such as printing wind tunnel models for the UCLA Supermileage club.
+          Occasionally we do some fundraising on Bruin Plaza so come check us out!
+          But if you are interested in 3D printing you can contact us at any time using the email in the <a href="#participate">get involved</a> section.
+        </div>
+      </div>
+      <div class="box sr11 org listelem proj" style="background-image:url('cadworkshopF13.jpg'); background-position:50% 70%;" id="proj4" data-Displacement="snap:snap">
+        <h3><a href="#proj4">CAD Workshop</a></h3>
+        <div class="content blackongold">
+          In Fall of 2013, our first quarter, Avengineering hosted a CAD workshop with the SolidWorks software with a focus on creating models for 3D printing.
         </div>
       </div>
       <br />
-      <div class="box xlrg org listelem" id="proj6" data-Displacement="snap:snap;">
-        <h3><a href="#proj6">Cipher Building</a></h3>
-        <div class="content">
+      <div class="box sr11 org listelem proj" style="background-image:url('compass-gear.png');" id="proj6" data-Displacement="snap:snap">
+        <h3><a href="#proj6">Arduino Workshop</a></h3>
+        <div class="content blackongold">
+          As a follow-up to our CAD Workshop, Avengineering hosted an Arduino work shop in the Winter 2014 quarter.
+          We introduced basic coding for the Arduino, how to output and read signals, and control flow for students new to both programming and the DIY scene.
         </div>
       </div>
-      <div class="box xlrg org listelem" id="proj10" data-Displacement="snap:snap;">
-        <h3><a href="#proj10">Magnetic Core Memory</a></h3>
-        <div class="content">
+      <div class="box sr11 org listelem proj" style="background-image:url('compass-gear.png');" id="proj7" data-Displacement="snap:snap">
+        <h3><a href="#proj7">3D Printed Arduino Robots</a></h3>
+        <div class="content blackongold">
+          Our CAD workshop and Arduino workshop culminated in this project for the Spring 2014 quarter where we designed 3D printed, servo driven, Arduino controlled robots,
+          such as drawing robots or rubber band launchers.
         </div>
       </div>
-      <div class="box xlrg org listelem" id="proj11" data-Displacement="snap:snap;">
-        <h3><a href="#proj11">Face Scanning</a></h3>
-        <div class="content">
-        </div>
-      </div>
-      <br />
-      <div class="box xlrg org listelem" id="proj4" data-Displacement="snap:snap">
-        <h3><a href="#proj4">Cardboard Arcade</a><br />(Under Consideration)</h3>
-        <div class="content">
-        </div>
-      </div>
-      <div class="box xlrg org listelem" id="proj5" data-Displacement="snap:snap">
-        <h3><a href="#proj5">Quadcopter / Zeppelin</a><br />(Under Consideration)</h3>
-        <div class="content">
-        </div>
-      </div>
-      <div class="box xlrg org listelem" id="proj7" data-Displacement="snap:snap;">
-        <h3><a href="#proj7">Kite Cameras</a><br />(Under Consideration)</h3>
-        <div class="content">
+      <div class="box sr11 org listelem proj" style="background-image:url('exploratory.jpg');" id="proj5" data-Displacement="snap:snap">
+        <h3><a href="#proj5">The Exploratory</a></h3>
+        <div class="content blackongold">
+          In Fall of 2013, Avengineering also took many trips to The Exploratory, a "makerspace" in Culver City to volunteer and contribute to teaching chidren basic engineering concepts.
+          Shown here is some of our members constructing a chair out of rolled up newspapers as an example for the children who will be trying the same challenge.
         </div>
       </div>
       <br />
-      <div class="box xlrg org listelem" id="proj8" data-Displacement="snap:snap;">
-        <h3><a href="#proj8">Motorization</a><br />(Under Consideration)</h3>
-        <div class="content">
+      <div class="box sr11 org listelem proj" style="background-image:url('rubegoldberg1.jpg'); background-position:70% 50%;" id="proj1" data-Displacement="snap:snap">
+        <h3><a href="#proj1">TBP Rube Goldberg</a><br />(Pre-Founding)</h3>
+        <div class="content blackongold">
+          In Winter Quarter 2013, Avengineering participated in TBP's Rube Goldberg machine.  This event resulted in the formation of the name "Avengineering."
         </div>
       </div>
-      <div class="box xlrg org listelem" id="proj9" data-Displacement="snap:snap;">
-        <h3><a href="#proj9">Projectile Launching</a></h3>
-        <div class="content">
+      <div class="box sr11 org listelem proj" style="background-image:url('cardboardboat1.jpg');" id="proj2" data-Displacement="snap:snap">
+        <h3><a href="#proj2">TBP Cardboard Boat Race</a><br />(Pre-Founding)</h3>
+        <div class="content blackongold">
+          In Spring Quarter 2013, Avengineering placed 2nd in TBP's Cardboard Boat race.  Our boat did not sink until we loaded 3 people into it after multiple circuits around the pool.
+          <br /><span class="whiteontblack" style="font-size:10px;">Image taken by Tau Beta Pi</span>
         </div>
       </div>
     </div>
@@ -285,9 +277,8 @@
   </div>
   <div class="nav scroll" id="personcontainer" style="height:350px; width:1200px; top:150px; left:100px; z-index:120; color:black; overflow:visible;">
     <div class="listcont scroll" style="top:0; left:0; width:4500px; height:350px;" data-Displacement="parallax:basis(4,0,0,1); parallaxOrigin:parent,-400,0;">
-      <div class="box sr9 transl listelem profile" id="person1" style="z-index:20;" data-Displacement="snap:snap;">
-        <h3 class="profiletitle"><a href="#person1">President: Homing Yim</a></a></h3>
-        <div class="profileimg"><img src="compass-gear.png" /></div>
+      <div class="box sr9 transl listelem profile" id="person1" style="z-index:20; background-image:url('compass-gear.png');" data-Displacement="snap:snap;">
+        <h3 class="profiletitle"><a href="#person1">President: HoMing Yim</a></a></h3>
         <div class="content profilecontent">
           Orginally entering HSSEAS as a Computer Science major,
           Ho Ming decided his love for outdoor adventure and physical activities does not compliment well with sitting in front of a computer all day.
@@ -295,9 +286,8 @@
           Nonetheless, Ho Ming enjoys the occasional opportunity to sail at Marina Del Ray, play badminton at John Wooden Center, and enjoying food in West Los Angeles.
         </div>
       </div>
-      <div class="box sr9 transl listelem profile" id="person2" style="z-index:20;" data-Displacement="snap:snap;">
+      <div class="box sr9 transl listelem profile" id="person2" style="z-index:20; background-image:url('compass-gear.png');" data-Displacement="snap:snap;">
         <h3 class="profiletitle"><a href="#person2">Vice President: Sean Chen</a></h3>
-        <div class="profileimg"><img src="compass-gear.png" /></div>
         <div class="content profilecontent">
           Sean is a 4th year physics major. He's in charge of external affairs with other clubs and industry, and assists the president to oversee the club.
           His interdisciplinary experiences help him diversify Avengineering's missions as well as branch out various organizations.
@@ -305,9 +295,8 @@
           and he dreams to establish a large intercollegiate network which concentrating on 3D printing learning and developing.
         </div>
       </div>
-      <div class="box sr9 transl listelem profile" id="person3" style="z-index:20;" data-Displacement="snap:snap;">
+      <div class="box sr9 transl listelem profile" id="person3" style="z-index:20; background-image:url('profile-treasurer.jpg');" data-Displacement="snap:snap;">
         <h3 class="profiletitle"><a href="#person3">Treasurer: Merrick Campbell</a></h3>
-        <div class="profileimg" style="background-image:url('profile-treasurer.jpg');"></div>
         <div class="content profilecontent">
           Merrick Campbell is a third year mechanical engineering student and an undergraduate researcher at the UCLA Smart Grid Energy Research Center (SMERC).
           When not studying or working, he enjoys building and tinkering with 3D Printers and playing with Lego.
@@ -315,9 +304,8 @@
           taking photos or working on film sets.
         </div>
       </div>
-      <div class="box sr9 transl listelem profile" id="person4" style="z-index:20;" data-Displacement="snap:snap;">
+      <div class="box sr9 transl listelem profile" id="person4" style="z-index:20; background-image:url('compass-gear.png');" data-Displacement="snap:snap;">
         <h3 class="profiletitle"><a href="#person4">Secretary: Tiffany Wu</a></h3>
-        <div class="profileimg"><img src="compass-gear.png" /></div>
         <div class="content profilecontent">
           Tiffany is mainly responsible for keeping track of meetings and ongoing projects and connecting with club members.
           She is a second year chemical engineering student.
@@ -325,18 +313,16 @@
           Aside from engineering, she also loves manga and martial arts. 
         </div>
       </div>
-      <div class="box sr9 transl listelem profile" id="person5" style="z-index:20;" data-Displacement="snap:snap;">
+      <div class="box sr9 transl listelem profile" id="person5" style="z-index:20; background-image:url('compass-gear.png');" data-Displacement="snap:snap;">
         <h3 class="profiletitle"><a href="#person5">Technical Director: Gary Zhang</a></h3>
-        <div class="profileimg"><img src="compass-gear.png" /></div>
         <div class="content profilecontent">
           Gary combines knowledge learned from many disciplines to determine design and technical details for Avengineering projects, and is the designer of this website.
           He likes to get up at 5 AM to watch Formula 1 races live and is part of the UCLA Formula SAE team, and is also a member of UCLA IEEE.
           He also enjoys difficult to master video games and non mainstream fiction and media.
         </div>
       </div>
-      <div class="box sr9 transl listelem profile" id="person6" style="z-index:20;" data-Displacement="snap:snap;">
+      <div class="box sr9 transl listelem profile" id="person6" style="z-index:20; background-image:url('compass-gear.png');" data-Displacement="snap:snap;">
         <h3 class="profiletitle"><a href="#person6">Project Director: Baixiao Huang</a></h3>
-        <div class="profileimg"><img src="compass-gear.png" /></div>
         <div class="content profilecontent">
           Baixiao is a second year Electrical Engineering student.
           As the project director, he collects project ideas, and manages materials and supplies for, and helps in the design of Avengineering's projects. 

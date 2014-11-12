@@ -1280,7 +1280,7 @@ var Displacement=new function(){
         if (!element||!elementObj) return;
         elementFrame=page.getFocus(elementObj);
         elementRotation=lal.getBlock(lal.clone(elementObj.effectiveDocumentFrame),[0,0],[1,1]);
-        elementFrame=lal.setBlock(elementFrame,[0,0],[1,1],elementRotation);
+        elementFrame=lal.setBlock(lal.round(elementFrame),[0,0],[1,1],elementRotation);
       }else{
         if (Object.prototype.toString.call(id)==="[object Array]"){
           elementFrame=id;

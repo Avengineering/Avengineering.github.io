@@ -21,7 +21,7 @@
   loading.style.fontWeight="bold";
   loading.style.fontVariant="small-caps";
   loading.style.zIndex="1";
-  loading.innerHTML="Loading...<br /> You shall wait patiently.";
+  loading.innerHTML="Avengineering<br /> (and it is loading)";
   var loadgear=document.createElement("div");
   loadgear.className="gear";
   loadgear.style.position="absolute";
