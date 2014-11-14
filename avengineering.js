@@ -100,11 +100,13 @@
       window.addEventListener("mousemove",mousemoved,false);
       window.addEventListener("mousedown",mouseButtonDown,false);
       window.addEventListener("mouseup",mouseButtonUp,false);
+      window.addEventListener("mouseover",mouseIFrame,false);
       document.getElementById("Displacement-Event").addEventListener("mouseover",snapIndicator,false);
     }else if (window.attachEvent){
       window.attachEvent("mousemove",mousemoved);
       window.attachEvent("mousedown",mouseButtonDown);
       window.attachEvent("mouseup",mouseButtonUp);
+      window.attachEvent("mouseoover",mouseIFrame);
       document.getElementById("Displacement-Event").attachEvent("mouseover",snapIndicator);
     }
   }
@@ -154,5 +156,13 @@
   function mouseButtonUp(event){
     if (!heldOn) return;
     heldOn.className=heldOn.className.replace(new RegExp("(?:^|\\s)"+"selected"+"(?!\\S)","g"),"");
+  }
+  function mouseIFrame(event){
+    if (event.target){
+      if (event.target.tagName=="IFRAME")
+      {
+        mouseButtonUp(event);
+      }
+    }
   }
 })();

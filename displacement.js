@@ -982,6 +982,7 @@ var Displacement=new function(){
         window.addEventListener("mousemove",mouseMoved,false);
         window.addEventListener("mousedown",mouseButtonDown,false);
         window.addEventListener("mouseup",mouseButtonUp,false);
+        window.addEventListener("mouseover",mouseIFrame,false);
         //window.addEventListener("hashchange",hashChanged,false);
       }else if (window.attachEvent){
         window.attachEvent("resize",scrollerSize);
@@ -991,6 +992,7 @@ var Displacement=new function(){
         window.attachEvent("mousemove",mousemoved);
         window.attachEvent("mousedown",mouseButtonDown);
         window.attachEvent("mouseup",mouseButtonUp);
+        window.attachEvent("mouseoover",mouseIFrame);
         //window.attachEvent("hashchange",hashChanged);
       }
       
@@ -1105,6 +1107,15 @@ var Displacement=new function(){
         snap();
       }else{
         recentMouseAction="click";
+      }
+    }
+    
+    //stop dragging also if mouse goes over an iframe
+    function mouseIFrame(event){
+      if (event.target){
+        if (event.target.tagName=="IFRAME"){
+          mouseButtonUp(event);
+        }
       }
     }
     
