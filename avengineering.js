@@ -97,16 +97,8 @@
   };
   function proto_init(){
     if (window.addEventListener){
-      window.addEventListener("mousemove",mousemoved,false);
-      window.addEventListener("mousedown",mouseButtonDown,false);
-      window.addEventListener("mouseup",mouseButtonUp,false);
-      window.addEventListener("mouseover",mouseIFrame,false);
       document.getElementById("Displacement-Event").addEventListener("mouseover",snapIndicator,false);
     }else if (window.attachEvent){
-      window.attachEvent("mousemove",mousemoved);
-      window.attachEvent("mousedown",mouseButtonDown);
-      window.attachEvent("mouseup",mouseButtonUp);
-      window.attachEvent("mouseoover",mouseIFrame);
       document.getElementById("Displacement-Event").attachEvent("mouseover",snapIndicator);
     }
   }
@@ -114,23 +106,7 @@
   var heldOn=document.body;
   function snapIndicator(event){
     var halfWindowSize=lal.div([window.innerHeight,window.innerWidth],2);
-    var pair=Displacement.getSnapTo(halfWindowSize);
-    var elementObj=pair[0];
     if (snapCursorTime!=false) window.clearTimeout(snapCursorTime);
-    if (elementObj&&(pair[1]==false)){
-      if (snapSelectTime!=false) window.clearTimeout(snapSelectTime);
-      var element=elementObj.element;
-      if (element!=lastSnap){
-        storage.appendChild(snapSelect);
-        element.appendChild(snapSelect);
-      }
-      snapSelect.style.opacity=1;
-      snapSelect.style.animation="fadeout 0.6s linear 0.5s";
-      snapSelect.style.WebkitAnimation="fadeout 0.6s linear 0.5s";
-      snapSelectTime=window.setTimeout(function(){
-        storage.appendChild(snapSelect);
-      },1000);
-    }
     storage.appendChild(snapCursor);
     document.body.appendChild(snapCursor);
     snapCursor.style.opacity=1;
@@ -139,30 +115,5 @@
     snapCursorTime=window.setTimeout(function(){
       storage.appendChild(snapCursor);
     },1000);
-  }
-  function mousemoved(event){
-    if (!event.target) return;
-    //if (event.target!=lastMouseOver){
-    //  if (lastMouseOver) remClass(lastMouseOver,"selected");
-    //  event.target.className+=" selected";
-    //}
-    lastMouseOver=event.target;
-  }
-  function mouseButtonDown(event){
-    if (!lastMouseOver) return;
-    heldOn=lastMouseOver;
-    heldOn.className+=" selected";
-  }
-  function mouseButtonUp(event){
-    if (!heldOn) return;
-    heldOn.className=heldOn.className.replace(new RegExp("(?:^|\\s)"+"selected"+"(?!\\S)","g"),"");
-  }
-  function mouseIFrame(event){
-    if (event.target){
-      if (event.target.tagName=="IFRAME")
-      {
-        mouseButtonUp(event);
-      }
-    }
   }
 })();

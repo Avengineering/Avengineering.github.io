@@ -40,6 +40,12 @@ var Displacement=new function(){
   //convert number to string without scientific notation
   function noExponent(n){
     var s;
+	var ZeroPad = "000000000000000000000000000000000000000000000000000000000000" + 
+	"000000000000000000000000000000000000000000000000000000000000" +
+	"000000000000000000000000000000000000000000000000000000000000" +
+	"000000000000000000000000000000000000000000000000000000000000" +
+	"000000000000000000000000000000000000000000000000000000000000" +
+	"000000000000000000000000000000000000000000000000000000000000";
     if (n<0){s="-";}else{s="";}
     if (Math.abs(n)<1){
       var e=parseInt(n.toString().split("e-")[1]);
@@ -49,14 +55,14 @@ var Displacement=new function(){
         } else {
           n*=Math.pow(10,e-1);
         }
-        n=s+"0."+(new Array(e-1)).join("0")+n.toString().replace("-","").replace(".","").split("e")[0];
+        n=s+"0."+ZeroPad.substr(0,e-1)+n.toString().replace("-","").replace(".","").split("e")[0];
       }
     }else{
       var e=parseInt(n.toString().split('e+')[1]);
       if (e>20){
           e-=20;
           n/=Math.pow(10,e);
-          n+=(new Array(e+1)).join('0');
+          n+=ZeroPad.substr(0,e+1);
       }
     }
     return n;
@@ -495,32 +501,32 @@ var Displacement=new function(){
             if (reset){
               list[i].element.style.backfaceVisibility="hidden";
             }
-            list[i].element.style.transform=appliedTransform+" translateZ(0)";
+            list[i].element.style.transform=appliedTransform+" translateZ(1px)";
           }
           if ("-webkit-transform" in bodystyle){
             if (reset){
               //list[i].element.style.WebkitPerspective="1000";
               list[i].element.style.WebkitBackfaceVisibility="hidden";
             }
-            list[i].element.style.WebkitTransform=appliedTransform+" translateZ(0)";
+            list[i].element.style.WebkitTransform=appliedTransform+" translateZ(1px)";
           }
           if ("-ms-transform" in bodystyle){
             if (reset){
               list[i].element.style.MsBackfaceVisibility="hidden";
             }
-            list[i].element.style.MsTransform=appliedTransform+" translateZ(0)";
+            list[i].element.style.MsTransform=appliedTransform+" translateZ(1px)";
           }
           if ("-moz-transform" in bodystyle){
             if (reset){
               list[i].element.style.MozBackfaceVisibility="hidden";
             }
-            list[i].element.style.MozTransform=appliedTransform+" translateZ(0)";
+            list[i].element.style.MozTransform=appliedTransform+" translateZ(1px)";
           }
           if ("-o-transform" in bodystyle){
             if (reset){
               list[i].element.style.OBackfaceVisibility="hidden";
             }
-            list[i].element.style.OTransform=appliedTransform+" translateZ(0)";
+            list[i].element.style.OTransform=appliedTransform+" translateZ(1px)";
           }
         }
       }
